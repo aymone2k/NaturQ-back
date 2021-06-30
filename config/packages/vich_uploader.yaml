@@ -1,0 +1,28 @@
+vich_uploader:
+    db_driver: orm
+    mappings:
+        proposal_pictures:
+            uri_prefix: '/uploads/images/proposals'
+            upload_destination: '%kernel.project_dir%/public/uploads/images/proposals'
+               
+        result_photo:
+            uri_prefix: '/uploads/images/result/find'
+            upload_destination: '%kernel.project_dir%/public/uploads/images/result/find'
+            
+        result_species:
+            uri_prefix: '/uploads/images/result/species'
+            upload_destination: '%kernel.project_dir%/public/uploads/images/result/species'
+            
+        result_more:
+            uri_prefix: '/uploads/images/result/more'
+            upload_destination: '%kernel.project_dir%/public/uploads/images/result/more'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer   
+        result_complementary:
+            uri_prefix: '/uploads/images/result/complementary'
+            upload_destination: '%kernel.project_dir%/public/uploads/images/result/complementary'
+              
+
+    #mappings:
+    #    products:
+    #        uri_prefix: /images/products
+    #        upload_destination: '%kernel.project_dir%/public/images/products'

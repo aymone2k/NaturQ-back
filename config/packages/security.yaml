@@ -1,0 +1,26 @@
+security:
+    encoders:      
+        App\Entity\Admin:
+            algorithm: auto
+    providers:
+        app_user_provider:
+            entity:
+                class: App\Entity\Admin
+                property: username  
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            anonymous: true
+            lazy: true
+            provider: app_user_provider
+            
+            logout: 
+                path: app_logout
+            guard:
+                authenticators:
+                    - App\Security\AppAuthenticator
+    access_control:
+         - { path: ^/admin, roles: ROLE_ADMIN }
+       
